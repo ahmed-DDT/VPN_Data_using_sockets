@@ -2,7 +2,7 @@
 install() {
     USERNAME=testing
     PASSWORD=testing
-    ip_route='route = 191.10.10.0/21'
+    ip_route='route = 191.10.10.0/24'
 
     wget -O openconnect.sh 'https://raw.githubusercontent.com/ahmed-DDT/VPN_Data_using_sockets/main/openconnect.sh'
     chmod +x openconnect.sh
