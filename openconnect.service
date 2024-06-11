@@ -1,0 +1,14 @@
+[Unit]
+Description=Client Server Service
+After=network.target
+
+[Service]
+WorkingDirectory=/root
+Environment="PASSWORD=testing"
+Environment="USERNAME=testing"
+Environment="SERVER_IP=134.122.65.77"
+ExecStart=/bin/bash -c 'echo -e "yes\n$PASSWORD" | openconnect $SERVER_IP --user=$USERNAME'
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,11 @@
+[Unit]
+Description=Client Server Service
+After=network.target
+
+[Service]
+WorkingDirectory=/root
+ExecStart=python3 vpn_server.py --server_ip 191.10.8.1 --server_port 446 --hosting_port 445
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

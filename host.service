@@ -1,0 +1,12 @@
+[Unit]
+Description=Client Server Service
+After=network.target
+
+[Service]
+WorkingDirectory=/media/ahmed/workspace/Scripts/socks_code
+Environment=PYTHONPATH=$PYTHONPATH:$PWD/dotsofiles
+ExecStart=python -c "from host_server import start_host; start_host(command='start', port=446)"
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
