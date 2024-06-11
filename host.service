@@ -3,10 +3,10 @@ Description=Client Server Service
 After=network.target
 
 [Service]
-WorkingDirectory=/media/ahmed/workspace/Scripts/socks_code
-Environment=PYTHONPATH=$PYTHONPATH:$PWD/dotsofiles
-ExecStart=python -c "from host_server import start_host; start_host(command='start', port=446)"
-Restart=always
+WorkingDirectory=/root
+ExecStart=python3 host_server.py --command start --port 446
+Restart=on-failure
+RestartSec=10
 
 [Install]
 WantedBy=multi-user.target
